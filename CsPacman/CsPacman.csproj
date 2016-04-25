@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BECCB068-F3DC-4A1F-B271-2051B09AA1B8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CsPacman</RootNamespace>
+    <AssemblyName>CsPacman</AssemblyName>
+    <StartupObject>eu.sig.cspacman.Launcher</StartupObject>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Compile Include="eu.sig.cspacman.sprite\AnimatedSprite.cs" />
+    <Compile Include="eu.sig.cspacman.sprite\EmptySprite.cs" />
+    <Compile Include="eu.sig.cspacman.sprite\ImageSprite.cs" />
+    <Compile Include="eu.sig.cspacman.sprite\PacManSprites.cs" />
+    <Compile Include="eu.sig.cspacman.sprite\SpriteStore.cs" />
+    <Compile Include="eu.sig.cspacman.sprite\ISprite.cs" />
+    <Compile Include="eu.sig.cspacman.board\Board.cs" />
+    <Compile Include="eu.sig.cspacman.board\BoardFactory.cs" />
+    <Compile Include="eu.sig.cspacman.board\Direction.cs" />
+    <Compile Include="eu.sig.cspacman.board\Square.cs" />
+    <Compile Include="eu.sig.cspacman.board\Unit.cs" />
+    <Compile Include="eu.sig.cspacman.npc\NPC.cs" />
+    <Compile Include="eu.sig.cspacman.npc.ghost\Blinky.cs" />
+    <Compile Include="eu.sig.cspacman.npc.ghost\Clyde.cs" />
+    <Compile Include="eu.sig.cspacman.npc.ghost\Ghost.cs" />
+    <Compile Include="eu.sig.cspacman.npc.ghost\GhostColor.cs" />
+    <Compile Include="eu.sig.cspacman.npc.ghost\GhostFactory.cs" />
+    <Compile Include="eu.sig.cspacman.npc.ghost\Inky.cs" />
+    <Compile Include="eu.sig.cspacman.npc.ghost\Navigation.cs" />
+    <Compile Include="eu.sig.cspacman.npc.ghost\Pinky.cs" />
+    <Compile Include="eu.sig.cspacman.level\CollisionInteractionMap.cs" />
+    <Compile Include="eu.sig.cspacman.level\DefaultPlayerInteractionMap.cs" />
+    <Compile Include="eu.sig.cspacman.level\ICollisionMap.cs" />
+    <Compile Include="eu.sig.cspacman.level\Level.cs" />
+    <Compile Include="eu.sig.cspacman.level\LevelFactory.cs" />
+    <Compile Include="eu.sig.cspacman.level\MapParser.cs" />
+    <Compile Include="eu.sig.cspacman.level\Pellet.cs" />
+    <Compile Include="eu.sig.cspacman.level\Player.cs" />
+    <Compile Include="eu.sig.cspacman.level\PlayerCollisions.cs" />
+    <Compile Include="eu.sig.cspacman.level\PlayerFactory.cs" />
+    <Compile Include="eu.sig.cspacman.game\Game.cs" />
+    <Compile Include="eu.sig.cspacman.game\GameFactory.cs" />
+    <Compile Include="eu.sig.cspacman.game\SinglePlayerGame.cs" />
+    <Compile Include="eu.sig.cspacman.ui\BoardPanel.cs" />
+    <Compile Include="eu.sig.cspacman.ui\ButtonPanel.cs" />
+    <Compile Include="eu.sig.cspacman.ui\PacKeyListener.cs" />
+    <Compile Include="eu.sig.cspacman.ui\PacManUI.cs" />
+    <Compile Include="eu.sig.cspacman.ui\PacManUiBuilder.cs" />
+    <Compile Include="eu.sig.cspacman.ui\ScorePanel.cs" />
+    <Compile Include="eu.sig.cspacman\Launcher.cs" />
+    <Compile Include="eu.sig.cspacman\PacmanConfigurationException.cs" />
+    <Compile Include="eu.sig.cspacman.board\IBoard.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>..\packages\System.Collections.Immutable.1.1.37\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Sprites\apple.png" />
+    <EmbeddedResource Include="Sprites\bell.png" />
+    <EmbeddedResource Include="Sprites\cherry.png" />
+    <EmbeddedResource Include="Sprites\dead.png" />
+    <EmbeddedResource Include="Sprites\floor.png" />
+    <EmbeddedResource Include="Sprites\galboss.png" />
+    <EmbeddedResource Include="Sprites\ghost_cyan.png" />
+    <EmbeddedResource Include="Sprites\ghost_eyes.png" />
+    <EmbeddedResource Include="Sprites\ghost_orange.png" />
+    <EmbeddedResource Include="Sprites\ghost_pink.png" />
+    <EmbeddedResource Include="Sprites\ghost_red.png" />
+    <EmbeddedResource Include="Sprites\ghost_vul_blue.png" />
+    <EmbeddedResource Include="Sprites\ghost_vul_white.png" />
+    <EmbeddedResource Include="Sprites\key.png" />
+    <EmbeddedResource Include="Sprites\melon.png" />
+    <EmbeddedResource Include="Sprites\mspacman.png" />
+    <EmbeddedResource Include="Sprites\orange.png" />
+    <EmbeddedResource Include="Sprites\pacman.png" />
+    <EmbeddedResource Include="Sprites\pellet.png" />
+    <EmbeddedResource Include="Sprites\strawberry.png" />
+    <EmbeddedResource Include="Sprites\wall.png" />
+    <EmbeddedResource Include="Sprites\64x64white.png" />
+    <EmbeddedResource Include="board.txt" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <DotNetNamingPolicy DirectoryNamespaceAssociation="Flat" ResourceNamePolicy="FileFormatDefault" />
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>
